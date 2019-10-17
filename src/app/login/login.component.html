@@ -1,0 +1,22 @@
+<div class="login-sec">
+    <form #form="ngForm" (ngSubmit)="loginForm()">
+        <div class="form-group">
+            <label for="username">username</label>
+            <input type="text" class="form-control" required pattern='^[a-zA-z ]+([\s][a-zA-Z ]+)*$'
+                [(ngModel)]="username" name="username" placeholder="username">
+            <div *ngIf="form.submitted || form.touched">
+                <div *ngIf="form.controls.username?.errors?.required" class="errors">Enter Username</div>
+                <div *ngIf="form.controls.username?.errors?.pattern" class="errors">Allow only Alphabet</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" [(ngModel)]="password" name="password" placeholder="Password">
+            <div *ngIf="form.submitted || form.touched">
+                <div *ngIf="form.controls.password?.errors?.required" class="errors">Enter Password</div>
+                <div *ngIf="form.controls.password?.errors?.pattern" class="errors">Minimum eight characters, at least one letter and one number</div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>

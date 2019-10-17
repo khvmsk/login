@@ -1,0 +1,5 @@
+<ul class="list-group" *ngFor='let recipelist of recipes'>
+    <li class="list-group-item">{{recipelist.name}}</li>
+    <li class="list-group-item">{{recipelist.description}}</li>
+    <li class="list-group-item"><img class="img-fluid" src='{{recipelist.imagepath}}' title="{{recipelist.name}}"/></li>
+  </ul>
