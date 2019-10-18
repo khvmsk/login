@@ -20,7 +20,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 import { ApiService } from './api.service';
-
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material' 
 
 @NgModule({
   declarations: [
@@ -42,8 +43,10 @@ import { ApiService } from './api.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    MatTableModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,MatIconModule, MatSidenavModule, MatListModule, MatButtonModule
   ],
   providers: [

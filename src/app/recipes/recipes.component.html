@@ -1,10 +1,40 @@
 <div class="container">
     <div class="row">
-        <div class="col-sm-5">
-            
-        </div>
+        <!-- <div class="col-sm-5">
+            <div *ngFor="let data of recipeData; let i = index">
+                <div *ngFor="let ingredient of data.ingredients">
+                    {{ingredient.name}}
+                </div>
+            </div>
+        </div> -->
         <div class="col-sm-7">
-            
+            <div>
+                <table mat-table [dataSource]="dataSource">
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> Id </th>
+                        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                      </ng-container>
+
+                  <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef> title </th>
+                    <td mat-cell *matCellDef="let row"> {{row.title}} </td>
+                  </ng-container>
+              
+
+                  <ng-container matColumnDef="author">
+                    <th mat-header-cell *matHeaderCellDef> author </th>
+                    <td mat-cell *matCellDef="let row" [style.color]="row.author"> {{row.author}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="ingredients">
+                    <th mat-header-cell *matHeaderCellDef> ingredients </th>
+                    <td mat-cell *matCellDef="let row" [style.color]="row.author"><span *ngFor="let ing of row.ingredients">{{ing.name}}</span></td>
+                  </ng-container>
+              
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+                  </tr>
+                </table>
+              </div>
         </div>
     </div>
 </div>

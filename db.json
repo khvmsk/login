@@ -126,7 +126,8 @@
         {
             "quantity": "2-1/2 cups",
             "name": "rolled oats, (not instant)",
-            "type": "Baking"
+            "type": "Baking",
+            "isLiquid":true
         },
         {
             "quantity": "1-1/4 cups",
