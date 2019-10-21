@@ -27,7 +27,7 @@ export class RecipesComponent implements OnInit {
   dataSource;
   recipes: Recipes[];
   isliquid:boolean;
-
+  contact:any;
   public recipeData:any;
   public requests;
   constructor(private apiservice:ApiService ) {
